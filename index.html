@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <header>
+        <h1>quizzardo</h1>
+    </header>
+
+    <div class="main-container">
+        <span class="left-btn-span"><button id="left-btn">&lAarr;</button></span>
+
+        <span class="questions">
+
+            <div id="start-window">
+                Press button to start<br>
+                <button id="start-btn">Start!</button>
+            </div>
+
+            <div class="qtext"></div>
+
+            <div class="options">
+                <div id="opt1" class="option"></div>
+                <div id="opt2" class="option"></div>
+                <div id="opt3" class="option"></div>
+                <div id="opt4" class="option"></div>
+            </div>
+        </span>
+
+        <span class="right-btn-span"><button id="right-btn">&rAarr;</button></span>
+
+        <br>
+
+    </div>
+
+    
+    <div id="submit-container">
+        <button id="submit" onclick="findScore();">Submit</button>
+    </div>
+
+    <div id="score">
+        Score:
+    </div>
+
+
+    <script src="./js/quizdata.js"></script>
+    <script src="./js/script.js"></script>
+    
+</body>
+</html>    

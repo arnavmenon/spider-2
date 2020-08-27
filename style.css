@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+*{
+    font-family: 'Patua One', cursive;
+}
+
+body{
+    margin:0 0 0 0;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    margin-bottom: 40px;
+    background-color: cadetblue;
+    color: whitesmoke;
+    height: 100px;
+    font-family: 'Patua One', cursive;
+
+
+}
+
+.main-container,#submit-container,#score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.left-btn-span,.questions,.right-btn-span{
+
+    margin:20px 30px 20px 30px;
+
+}
+
+.questions{
+    width:50%;
+}
+
+#left-btn,#right-btn{
+    display:inline-block;
+}
+
+#opt1,#opt2,#opt3,#opt4{
+    margin-top: 15px;
+    border: 1px solid black;
+}
