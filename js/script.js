@@ -44,7 +44,7 @@ document.getElementById("start-btn").addEventListener('click',()=>{
 
 //nav bw questions
 rb.addEventListener('click',()=>{
-    if(qnum<3&&qnum>=1){
+    if(qnum<10&&qnum>=1){
 
         qnum++;
         indicateAnswer();
@@ -56,7 +56,7 @@ rb.addEventListener('click',()=>{
 })
 
 lb.addEventListener('click',()=>{
-    if(qnum<=3&&qnum>1){
+    if(qnum<=10&&qnum>1){
         qnum--;
         indicateAnswer();
         qtext.innerHTML=data[qnum-1].question;
