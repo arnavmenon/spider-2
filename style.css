@@ -1,25 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
+
 *{
     font-family: 'Patua One', cursive;
 }
 
 body{
     margin:0 0 0 0;
+        background: linear-gradient(rgba(162, 230, 235, 0.5), rgba(162, 230, 235, 0.5)), url("https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png");
+
 }
 
-header{
-    display: flex;
+#sidenav {
+    height: 100%;
+    width: 300px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: cadetblue; 
+    overflow-x: hidden; 
+    padding-top: 20px;
     align-items: center;
     justify-content: center;
-    flex-direction: column; 
-    margin-bottom: 40px;
-    background-color: cadetblue;
-    color: whitesmoke;
-    height: 100px;
-    font-family: 'Patua One', cursive;
+    text-align: center;
+    
+  }
 
 
+#sideheadtop{
+    color: black;
+    font-size: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#sideheadbtm{
+    color: black;
+    font-size: 35px;
+    margin-top: 20px;
 }
 
 .main-container,#submit-container,#score{
@@ -29,13 +48,39 @@ header{
     text-align: center;
 }
 
-.left-btn-span,.questions,.right-btn-span{
+.main-container{
+    margin-left: 300px;
+    height: 100%;
+}
 
-    margin:20px 30px 20px 30px;
+.left-btn-span,#questions,.right-btn-span{
+
+    margin-top: 200px;
+    height: 100%;
+
 
 }
 
-.questions{
+#start-window{
+    margin-top: 150px;
+    font-size: 35px;
+    border:3px solid turquoise;
+    border-radius: 10px;
+    padding: 40px 40px 40px 40px;
+    background-color: cadetblue;
+
+}
+
+#start-btn{
+    font-size: 35px;
+    background-color: cadetblue;
+    border:2px solid turquoise;
+    margin-top: 35px;
+    border-radius: 10px;
+
+}
+
+#questions{
     width:50%;
 }
 
