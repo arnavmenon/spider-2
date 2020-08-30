@@ -7,7 +7,7 @@
 
 body{
     margin:0 0 0 0;
-        background: linear-gradient(rgba(162, 230, 235, 0.5), rgba(162, 230, 235, 0.5)), url("https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png");
+    background: linear-gradient(rgba(162, 230, 235, 0.5), rgba(162, 230, 235, 0.5)), url("https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png");
 
 }
 
@@ -24,7 +24,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+    opacity: 100%;
   }
 
 
@@ -32,13 +32,13 @@ body{
     color: black;
     font-size: 35px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #sideheadbtm{
     color: black;
     font-size: 35px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .main-container,#submit-container,#score{
@@ -55,11 +55,10 @@ body{
 
 .left-btn-span,#questions,.right-btn-span{
 
-    margin-top: 200px;
+    margin-top: 150px;
     height: 100%;
-
-
 }
+
 
 #start-window{
     margin-top: 150px;
@@ -77,18 +76,85 @@ body{
     border:2px solid turquoise;
     margin-top: 35px;
     border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+
 
 }
 
+#submit{
+    font-size: 30px;
+    background-color: cadetblue;
+    border:2px solid turquoise;
+    margin-top: 75px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 20px 20px 20px 20px;
+}
+
 #questions{
-    width:50%;
+    width:60%;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 30px;
+    border:3px solid turquoise;
+    border-radius: 10px;
+    padding: 40px 40px 40px 40px;
+    background-color: cadetblue;
+}
+
+.qtext{
+    margin-bottom: 40px;
 }
 
 #left-btn,#right-btn{
     display:inline-block;
+    font-size: 40px;
+    background-color: cadetblue;
+    border: 2px solid turquoise;
+    cursor: pointer;
+
 }
 
-#opt1,#opt2,#opt3,#opt4{
+.option{
     margin-top: 15px;
     border: 1px solid black;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
 }
+
+#qimg{
+    width: 300px;
+}
+
+#scorebox{
+    width:60%;
+    margin-top: 150px;
+    font-size: 40px;
+    border: 2px solid turquoise;
+    padding: 40px 40px 40px 40px;
+    border-radius: 10px;
+    background-color: cadetblue;
+}
+
+#score{
+    margin-top: 25px;
+    font-size: 60px;
+}
+
+#restart{
+    font-size: 30px;
+    background-color: cadetblue;
+    border:2px solid turquoise;
+    margin-top: 75px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 20px 20px 20px 20px;
+}
+
+#start-btn:hover,#submit:hover,#restart:hover,#left-btn:hover,#right-btn:hover{
+    background-color: rgba(82, 138, 139, 0.74);
+}
+

@@ -11,7 +11,7 @@ let data=[
 
     {
         question: 'How many states in India?',
-        image: '',
+        image: 'https://www.w3schools.com/w3css/img_lights.jpg',
         options: ['27','28','29','30'],
         answer: 'opt3',
         answered: 0,

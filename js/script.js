@@ -1,31 +1,28 @@
 
 var qtext,qopts,options,lb,rb,sub;
 
-var qnum,quizStatus=0;
+var qnum,answered=0,quizStatus=0;
 
 
 //indicating answers
 function resetColors(){
     options.forEach(option => {
-       option.style.backgroundColor="white";
+       option.style.backgroundColor="cadetblue";
     });
 }
 
 function indicateAnswer(){
 
+    resetColors();
+
     if(data[qnum-1].answered==1&&data[qnum-1].correct==1){
-        resetColors();
-        document.getElementById(`${data[qnum-1].clickedOpt}`).style.backgroundColor="green";
+        document.getElementById(`${data[qnum-1].clickedOpt}`).style.backgroundColor="rgb(72, 230, 119)";
     }
     
     else if(data[qnum-1].answered==1&&data[qnum-1].correct==-1){
-        resetColors();
-        document.getElementById(`${data[qnum-1].clickedOpt}`).style.backgroundColor="red";
+        document.getElementById(`${data[qnum-1].clickedOpt}`).style.backgroundColor="rgb(231, 110, 88)";
     }
 
-    else if(data[qnum-1].answered==0){
-        resetColors();
-    }
 }
 
 //start quiz 
@@ -45,7 +42,6 @@ function openQuiz(){
     submit.id='submit';submit.innerHTML='SUBMIT';
     quizBox.innerHTML=`
                             <div class="qtext"></div>
-
                             <div class="options">
                                 <div id="opt1" class="option"></div>
                                 <div id="opt2" class="option"></div>
@@ -97,19 +93,19 @@ function activateListeners(){
             option.addEventListener('click',()=>{
 
                 if(data[qnum-1].answered==0){
-
+                    answered++;
                     data[qnum-1].answered=1;
                     let choice=option.id;
                     data[qnum-1].clickedOpt=choice;
                     if(choice==data[qnum-1].answer){         
                         data[qnum-1].correct=1;
                     }
-
                     else{
                         data[qnum-1].correct=-1;
                     }
 
                     indicateAnswer();
+                    if(answered==10) sub.click();
                 }
             })
 
@@ -125,6 +121,9 @@ function activateListeners(){
                 qtext.innerHTML=data[qnum-1].question;
                 for(let j=1;j<=4;j++)
                     document.getElementById(`opt${j}`).innerHTML=data[qnum-1].options[j-1];
+                /* if(data[qnum-1].image!='')
+                    document.getElementById("qimg").src=data[qnum-1].image;
+                else document.getElementById("qimg").src=''; */
         
             }
         })
@@ -136,7 +135,7 @@ function activateListeners(){
                 qtext.innerHTML=data[qnum-1].question;
                 for(let j=1;j<=4;j++)
                     document.getElementById(`opt${j}`).innerHTML=data[qnum-1].options[j-1];
-        
+
             }
         })
 
@@ -156,8 +155,15 @@ function endQuiz(){
     document.querySelector("#questions").style.display="none";
 
     let scorebox=document.createElement('div');
-    scorebox.id='score';
+    scorebox.id='scorebox';
+    scorebox.innerHTML=`<span><u>Your Score</u>
+                        <span id="score"></span>
+                        </span>
+                        <button id="restart">Try Again!</button>`
     document.querySelector(".main-container").appendChild(scorebox);
+    document.getElementById('restart').addEventListener('click',()=>{
+        window.location.reload();
+    })
 
 }
 function findScore(){
@@ -170,7 +176,7 @@ function findScore(){
         data.forEach(item=>{
             if(item.correct==1) score++;
         })
-        document.getElementById("score").textContent+=score;
+        document.getElementById("score").innerHTML+=score;
     }
 }
   
