@@ -158,3 +158,21 @@ body{
     background-color: rgba(82, 138, 139, 0.74);
 }
 
+#navcontainer{
+    margin-top: 50px;
+}
+
+#row1,#row2{
+    font-size: 50px;
+    margin:auto;
+    margin-top:3px;
+    margin-right:3px;
+}
+
+.navbox{
+    border:1px solid black;
+    width:30px;
+    cursor: pointer;
+    
+}
+

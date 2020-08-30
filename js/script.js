@@ -1,6 +1,6 @@
 
-var qtext,qopts,options,lb,rb,sub;
-
+var qtext,qopts,options,lb,rb,sub,qnav;
+var sidenav=document.querySelector("#sidenav");
 var qnum,answered=0,quizStatus=0;
 
 
@@ -17,10 +17,12 @@ function indicateAnswer(){
 
     if(data[qnum-1].answered==1&&data[qnum-1].correct==1){
         document.getElementById(`${data[qnum-1].clickedOpt}`).style.backgroundColor="rgb(72, 230, 119)";
+        qnav[qnum-1].style.backgroundColor="rgb(72, 230, 119)";
     }
     
     else if(data[qnum-1].answered==1&&data[qnum-1].correct==-1){
         document.getElementById(`${data[qnum-1].clickedOpt}`).style.backgroundColor="rgb(231, 110, 88)";
+        qnav[qnum-1].style.backgroundColor="rgb(231, 110, 88)";
     }
 
 }
@@ -34,11 +36,12 @@ function openQuiz(){
     let quizBox=document.createElement('span');
     let rightspan=document.createElement('span');
     let submit=document.createElement('button');
+    let navbox=document.createElement('div');
 
 
     leftspan.innerHTML=`<button id="left-btn">&lAarr;</button>`;leftspan.className='left-btn-span';
     rightspan.innerHTML=`<button id="right-btn">&rAarr;</button>`;rightspan.className='right-btn-span';
-    quizBox.id='questions';
+    quizBox.id='questions';navbox.id='navcontainer';
     submit.id='submit';submit.innerHTML='SUBMIT';
     quizBox.innerHTML=`
                             <div class="qtext"></div>
@@ -49,11 +52,27 @@ function openQuiz(){
                                 <div id="opt4" class="option"></div>
 
                             </div>`;
+ /*    navbox.innerHTML=`  
+                        <div id="row1">
+                        <span id="nav1">1</span><span id="nav2">2</span><span id="nav3">3</span><span id="nav4">4</span><span id="nav5">5</span>
+                        </div> 
+                        <div id="row2">
+                        <span id="nav6">6</span><span id="nav7">7</span><span id="nav8">8</span><span id="nav9">9</span><span id="nav10">10</span>
+                        </div>` */
+        
+    navbox.innerHTML=`  
+                        <div id="row1">
+                        <span class="navbox">1</span><span class="navbox">2</span><span class="navbox">3</span><span class="navbox">4</span><span class="navbox">5</span>
+                        </div> 
+                        <div id="row2">
+                        <span class="navbox">6</span><span class="navbox">7</span><span class="navbox">8</span><span class="navbox">9</span><span class="navbox">10</span>
+                        </div>`
 
     document.querySelector(".main-container").appendChild(leftspan);
     document.querySelector(".main-container").appendChild(quizBox);
     document.querySelector(".main-container").appendChild(rightspan);
-    document.querySelector("#sidenav").appendChild(submit);
+    sidenav.appendChild(navbox);
+    sidenav.appendChild(submit);
 
 
 
@@ -63,6 +82,8 @@ function openQuiz(){
     lb=document.getElementById('left-btn');
     rb=document.getElementById('right-btn');
     sub=document.getElementById('submit');
+    qnav=document.querySelectorAll('.navbox');
+    console.log(qnav);
 
     activateListeners();
 }
@@ -111,6 +132,20 @@ function activateListeners(){
 
 
         });
+
+        qnav.forEach(qbox => {
+            
+            qbox.addEventListener('click',()=>{
+
+                qnum=qbox.innerHTML;
+                indicateAnswer();
+                qtext.innerHTML=data[qnum-1].question;
+                for(let j=1;j<=4;j++)
+                    document.getElementById(`opt${j}`).innerHTML=data[qnum-1].options[j-1];
+
+            })
+
+        }); 
 
 
         rb.addEventListener('click',()=>{
