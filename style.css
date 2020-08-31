@@ -130,17 +130,17 @@ body{
 }
 
 #scorebox{
-    width:60%;
-    margin-top: 150px;
+    width: 65%;
+    margin-top: 30px;
     font-size: 40px;
     border: 2px solid turquoise;
-    padding: 40px 40px 40px 40px;
+    padding: 0px 40px 40px 40px;
     border-radius: 10px;
     background-color: cadetblue;
 }
 
 #score{
-    margin-top: 25px;
+    /* margin-top: 25px; */
     font-size: 60px;
 }
 
@@ -174,5 +174,10 @@ body{
     width:30px;
     cursor: pointer;
     
+}
+
+.datespan{
+    color: rgb(83, 83, 83);
+    font-size: 35px;
 }
 
