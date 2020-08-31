@@ -1,6 +1,6 @@
 
 var qtext,qopts,options,lb,rb,sub,qnav,name,userscore;
-const timelimit=180;
+const timelimit=120;
 var timeleft=timelimit,x;
 var sidenav=document.querySelector("#sidenav");
 var qnum,answered=0,quizStatus=0;
@@ -252,6 +252,7 @@ function endQuiz(){
     clearInterval(x);
     document.getElementById("timer").remove();
     document.getElementById("navcontainer").remove();
+    sub.remove();
 
     let scorebox=document.createElement('div');
     scorebox.id='scorebox';
@@ -287,13 +288,14 @@ function findScore(){
         if(timeleft<=0) timeleft=0;
 
         var dateTime=findDateTime();
+
         data.forEach(item=>{
             if(item.correct==1) userscore++;
         })
 
         //algo to calc score based on time,corrct to wrong ratio
 
-        userscore=(userscore)*7 + (timeleft/180)*(userscore/10)*30;
+        userscore=(userscore)*7 + (timeleft/120)*(userscore/10)*30;
         userscore=(Math.round(userscore * 100) / 100).toFixed(2);
 
         for(let i=0;i<5;i++){
