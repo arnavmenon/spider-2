@@ -104,7 +104,7 @@ body{
 }
 
 .qtext{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #left-btn,#right-btn{
@@ -127,6 +127,9 @@ body{
 
 #qimg{
     width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 #scorebox{

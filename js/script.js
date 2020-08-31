@@ -1,5 +1,5 @@
 
-var qtext,qopts,options,lb,rb,sub;
+var qtext,qopts,options,lb,rb,sub,image;
 
 var qnum,answered=0,quizStatus=0;
 
@@ -42,6 +42,7 @@ function openQuiz(){
     submit.id='submit';submit.innerHTML='SUBMIT';
     quizBox.innerHTML=`
                             <div class="qtext"></div>
+                            <img id="qimg">
                             <div class="options">
                                 <div id="opt1" class="option"></div>
                                 <div id="opt2" class="option"></div>
@@ -63,6 +64,7 @@ function openQuiz(){
     lb=document.getElementById('left-btn');
     rb=document.getElementById('right-btn');
     sub=document.getElementById('submit');
+    image=document.getElementById("qimg")
 
     activateListeners();
 }
@@ -121,9 +123,12 @@ function activateListeners(){
                 qtext.innerHTML=data[qnum-1].question;
                 for(let j=1;j<=4;j++)
                     document.getElementById(`opt${j}`).innerHTML=data[qnum-1].options[j-1];
-                /* if(data[qnum-1].image!='')
+
+                if(data[qnum-1].image!=''){
+                    image.style.display="block";
                     document.getElementById("qimg").src=data[qnum-1].image;
-                else document.getElementById("qimg").src=''; */
+                }                   
+                else image.style.display="none";
         
             }
         })
@@ -135,6 +140,12 @@ function activateListeners(){
                 qtext.innerHTML=data[qnum-1].question;
                 for(let j=1;j<=4;j++)
                     document.getElementById(`opt${j}`).innerHTML=data[qnum-1].options[j-1];
+
+                if(data[qnum-1].image!=''){
+                    image.style.display="block";
+                    image.src=data[qnum-1].image;
+                }                   
+                else image.style.display="none";
 
             }
         })
