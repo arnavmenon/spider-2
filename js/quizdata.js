@@ -14,7 +14,7 @@ let data=[
 
     {
         question: 'Can you always tell if someone has COVID-19? ',
-        image: 'https://www.w3schools.com/w3css/img_lights.jpg',
+        image: '',
         options: ['No - COVID-19 cant be detected even in labs',
             'No – Not everyone with COVID-19 has symptoms',
             'Yes – It will be obvious, a person with COVID-19 coughs a lot',
@@ -27,7 +27,7 @@ let data=[
 
     {
         question: 'Can washing your hands protect you from COVID-19? ',
-        image: '',
+        image: 'https://images.ctfassets.net/cnu0m8re1exe/4r8WtJcWXpTaMJK9gZ69vE/cc582bf6e8bf7e1c9c4ffa01c78179e2/shutterstock_1516896074.jpg?w=650&h=433&fit=fill',
         options: ['No - COVID-19 will wipe out humanity',
             'Yes – but only if you use a strong bleach',
             'Yes – normal soap and water or hand sanitizer is enough',
@@ -39,7 +39,7 @@ let data=[
     },
     {
         question: 'Which of the following is an example of social distancing?',
-        image: '',
+        image: 'https://d26toa8f6ahusa.cloudfront.net/wp-content/uploads/2020/03/18090451/social-distancing.jpg',
         options: ['You avoid people who are shorter than 6 feet',  
             'You stop going to crowded places and other people’s houses', 
             'You stop talking to the people you live with',
@@ -63,7 +63,7 @@ let data=[
     },
     {
         question: 'The first case of novel Coronavirus was identified in',
-        image: '',
+        image: 'https://www.incimages.com/uploaded_files/image/1920x1080/getty_679547254_200013351818843182306_411965.jpg',
         options: ['Beijing','Shanghai','Wuhan','Tianjin'],
         answer: 'opt3',
         answered: 0,
@@ -72,7 +72,7 @@ let data=[
     },
     {
         question: 'From where did coronavirus get its name?',
-        image: '',
+        image: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/1800x1200_virus_3d_render_red_03_other.jpg?resize=*:350px',
         options: [ 'From Corona&trade; beer',
             'Due to its crown-like projections',
             'Due to its leaf-like projections',
